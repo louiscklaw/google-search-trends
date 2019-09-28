@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><title>google trends dashboard</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"><script src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js"></script><script src="./js/app.min.js"></script><link rel="stylesheet" href="css/style.css"></head><body><section class="section"><div class="container"><nav class="level">
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="index.html">Home</a>
+    </p>
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="#">link1</a>
+    </p>
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="#">link2</a>
+    </p>
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="#">link3</a>
+    </p>
+</nav>
+</div></section><section class="section"><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderWidget(
+    "dailytrends",
+    "",
+    {"geo": "US",
+    "guestPath": "https://trends.google.com:443/trends/embed/"}
+    )
+</script></div><div class="column"><script>trends.embed.renderWidget(
+    "dailytrends",
+    "",
+    {"geo": "HK",
+    "guestPath": "https://trends.google.com:443/trends/embed/"}
+    )
+</script></div><div class="column"><script>trends.embed.renderWidget(
+    "dailytrends",
+    "",
+    {"geo": "TW",
+    "guestPath": "https://trends.google.com:443/trends/embed/"}
+    )
+</script></div></div></div><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [ {
+        "geo": "US",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [ {
+        "geo": "TW",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [ {
+        "geo": "HK",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div></div></div><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
+    "comparisonItem": [ {
+        "geo": "US",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
+    "comparisonItem": [ {
+        "geo": "TW",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
+    "comparisonItem": [ {
+        "geo": "HK",
+        "time": "today 1-m"
+    } ],
+    "category": 0,
+    "property": ""
+}, {
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );
+</script></div></div></div></section></body></html>

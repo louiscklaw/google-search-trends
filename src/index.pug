@@ -1,0 +1,69 @@
+
+mixin google_trend_widget(geo)
+    script.
+        trends.embed.renderWidget(
+            "dailytrends",
+            "",
+            {"geo": "#{geo}",
+            "guestPath": "https://trends.google.com:443/trends/embed/"}
+            )
+
+mixin google_explore_widget(what, time, geo)
+    script.
+        trends.embed.renderExploreWidget( "#{what}", {
+            "comparisonItem": [ {
+                "geo": "#{geo}",
+                "time": "#{time}"
+            } ],
+            "category": 0,
+            "property": ""
+        }, {
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin google_search_topics(duration, geo)
+    +google_explore_widget("RELATED_TOPICS", duration, geo)
+
+
+mixin google_search_queries(duration, geo)
+    +google_explore_widget("RELATED_QUERIES", duration, geo)
+
+
+doctype html
+html(lang='en')
+    head
+        title google trends dashboard
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css")
+        script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
+        script(src="./js/app.min.js")
+        link(rel="stylesheet", href="css/style.css")
+    body
+        section.section
+            .container
+                include nav.html
+
+        section.section
+            .container
+                .columns
+                    .column
+                        +google_trend_widget("US")
+                    .column
+                        +google_trend_widget("HK")
+                    .column
+                        +google_trend_widget("TW")
+            .container
+                .columns
+                    .column
+                        +google_search_topics("today 1-m","US")
+                    .column
+                        +google_search_topics("today 1-m","TW")
+                    .column
+                        +google_search_topics("today 1-m","HK")
+            .container
+                .columns
+                    .column
+                        +google_search_queries("today 1-m","US")
+                    .column
+                        +google_search_queries("today 1-m","TW")
+                    .column
+                        +google_search_queries("today 1-m","HK")

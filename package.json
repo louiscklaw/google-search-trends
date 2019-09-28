@@ -1,0 +1,31 @@
+{
+  "name": "google-search-trends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louiscklaw/google-search-trends.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louiscklaw/google-search-trends/issues"
+  },
+  "homepage": "https://github.com/louiscklaw/google-search-trends#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-javascript-obfuscator": "^1.1.6",
+    "gulp-less": "^4.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0"
+  }
+}
