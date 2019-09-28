@@ -24,28 +24,4 @@ html(lang='en')
                         +google_search_related_topics("python")
                     .column
                         +google_search_related_quries("python")
-            .container
-                .columns
-                    .column
-                        +google_trend_widget("US")
-                    .column
-                        +google_trend_widget("HK")
-                    .column
-                        +google_trend_widget("TW")
-            .container
-                .columns
-                    .column
-                        +google_search_topics("today 1-m","US")
-                    .column
-                        +google_search_topics("today 1-m","TW")
-                    .column
-                        +google_search_topics("today 1-m","HK")
-            .container
-                .columns
-                    .column
-                        +google_search_queries("today 1-m","US")
-                    .column
-                        +google_search_queries("today 1-m","TW")
-                    .column
-                        +google_search_queries("today 1-m","HK")
     include _footer.pug

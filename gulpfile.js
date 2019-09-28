@@ -17,7 +17,9 @@ const javascriptObfuscator = require( 'gulp-javascript-obfuscator' );
 var babel = require( "gulp-babel" );
 
 function html() {
-  return src( 'src/*.pug' )
+  return src(
+    ['src/*.pug', '!src/_*.pug']
+   )
     .pipe( pug() )
     .pipe( dest( 'docs' ) )
 }

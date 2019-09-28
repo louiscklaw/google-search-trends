@@ -1,0 +1,136 @@
+
+mixin google_trend_widget(geo)
+    script.
+        trends.embed.renderWidget(
+            "dailytrends",
+            "",
+            {"geo": "#{geo}",
+            "guestPath": "https://trends.google.com:443/trends/embed/"}
+            )
+
+mixin google_explore_widget(what, time, geo)
+    script.
+        trends.embed.renderExploreWidget( "#{what}", {
+            "comparisonItem": [ {
+                "geo": "#{geo}",
+                "time": "#{time}"
+            } ],
+            "category": 0,
+            "property": ""
+        }, {
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin google_search_related_topics(topic, property="")
+    script.
+        trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+            "comparisonItem": [ {
+                "keyword": "#{topic}",
+                "time": "today 1-m"
+            } ],
+            "category": 0,
+            "property": "#{property}"
+        }, {
+            "exploreQuery": "q=#{topic}&date=today 1-m",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin google_search_related_quries(topic, property="", duration="today 1-m")
+    script.
+        trends.embed.renderExploreWidget( "RELATED_QUERIES", {
+            "comparisonItem": [ {
+                "keyword": "#{topic}",
+                "time": "#{duration}"
+            } ],
+            "category": 0,
+            "property": "#{property}"
+        }, {
+            "exploreQuery": "q=#{topic}&date=#{duration}",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin interest_over_time(geo="")
+    script.
+        trends.embed.renderExploreWidget( "TIMESERIES", {
+            "comparisonItem": [ {
+                "keyword": "python",
+                "geo": "#{geo}",
+                "time": "today 12-m"
+            }, {
+                "keyword": "javascript",
+                "geo": "#{geo}",
+                "time": "today 12-m"
+            }, {
+                "keyword": "php",
+                "geo": "#{geo}",
+                "time": "today 12-m"
+            }, {
+                "keyword": "go",
+                "geo": "#{geo}",
+                "time": "today 12-m"
+            } ],
+            "category": 0,
+            "property": ""
+        }, {
+            "exploreQuery": "q=python,javascript,php,go&date=today 12-m,today 12-m,today 12-m,today 12-m",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin compare_by_region()
+    script.
+        trends.embed.renderExploreWidget( "GEO_MAP", {
+            "comparisonItem": [ {
+                "keyword": "python",
+                "geo": "",
+                "time": "today 12-m"
+            }, {
+                "keyword": "javascript",
+                "geo": "",
+                "time": "today 12-m"
+            }, {
+                "keyword": "php",
+                "geo": "",
+                "time": "today 12-m"
+            }, {
+                "keyword": "go",
+                "geo": "",
+                "time": "today 12-m"
+            } ],
+            "category": 0,
+            "property": ""
+        }, {
+            "exploreQuery": "q=python,javascript,php,go&date=today 12-m,today 12-m,today 12-m,today 12-m",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin lihkg_vs_hkgolden_interest_over_time()
+    script.
+        trends.embed.renderExploreWidget( "TIMESERIES", {
+            "comparisonItem": [ {
+                "keyword": "lihkg",
+                "geo": "",
+                "time": "today 3-m"
+            }, {
+                "keyword": "hkgolden",
+                "geo": "",
+                "time": "today 3-m"
+            } ],
+            "category": 0,
+            "property": ""
+        }, {
+            "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin youtube_search_topics(topic)
+    +google_search_related_topics(topic, "youtube")
+
+mixin youtube_search_queries(topic)
+    +google_search_related_quries(topic, "youtube")
+
+mixin google_search_topics(duration, geo)
+    +google_explore_widget("RELATED_TOPICS", duration, geo)
+
+
+mixin google_search_queries(duration, geo)
+    +google_explore_widget("RELATED_QUERIES", duration, geo)
