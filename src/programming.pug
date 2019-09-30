@@ -3,7 +3,7 @@ include _mixins.pug
 doctype html
 html(lang='en')
     head
-        title google trends dashboard
+        title programming dashboard
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css")
         script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
         script(src="./js/app.min.js")
@@ -25,7 +25,7 @@ html(lang='en')
 
         section.section
             .container
-                h3 programming language distribution over the world
+                h3.subtitle programming language distribution over the world
                 .columns
                     +renderExploreWidgetColumns(
                         "GEO_MAP",

@@ -105,11 +105,17 @@ mixin compare_by_region()
 
 mixin renderExploreWidgetColumns(type, compare_items,  duration, region_list, exp=false)
     each region in region_list
+        if region == ''
+            - region_text = 'World'
+        else
+            - region_text = region
         if exp
             .column.expandable
+                .graph_title !{region_text}
                 +renderExploreWidgetColumn(type, compare_items, duration[0], region )
         else
             .column
+                .graph_title !{region_text}
                 +renderExploreWidgetColumn(type, compare_items, duration[0], region )
 
 
