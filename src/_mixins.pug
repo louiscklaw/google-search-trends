@@ -103,10 +103,14 @@ mixin compare_by_region()
             "guestPath": "https://trends.google.com:443/trends/embed/"
         } );
 
-mixin different_region_helloworld(type, compare_items,  duration, region_list)
+mixin renderExploreWidgetColumns(type, compare_items,  duration, region_list, exp=false)
     each region in region_list
-        .column
-            +renderExploreWidget_test(type, compare_items, duration[0], region )
+        if exp
+            .column.expandable
+                +renderExploreWidgetColumn(type, compare_items, duration[0], region )
+        else
+            .column
+                +renderExploreWidgetColumn(type, compare_items, duration[0], region )
 
 
 
@@ -142,7 +146,7 @@ mixin google_search_topics(duration, geo)
 mixin google_search_queries(duration, geo)
     +google_explore_widget("RELATED_QUERIES", duration, geo)
 
-mixin renderExploreWidget_test(type, compare_items, period, region)
+mixin renderExploreWidgetColumn(type, compare_items, period, region)
     - var temp_str = [];
     //- pre !{type}
     //- pre !{compare_items}

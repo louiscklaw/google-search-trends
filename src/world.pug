@@ -15,24 +15,33 @@ html(lang='en')
 
         section.section
             .container
+                h3.title Recent search of the world
                 .columns
                     .column
+                        h3.subtitle HK
                         +trending_search("dailytrends","HK")
                     .column
+                        h3.subtitle TW
                         +trending_search("dailytrends","TW")
                     .column
+                        h3.subtitle US
                         +trending_search("dailytrends","US")
                     .column
+                        h3.subtitle GB
                         +trending_search("dailytrends","GB")
             .container
                 .columns
                     .column
+                        h3.subtitle FR
                         +trending_search("dailytrends","FR")
                     .column
+                        h3.subtitle DE
                         +trending_search("dailytrends","DE")
                     .column
+                        h3.subtitle JP
                         +trending_search("dailytrends","JP")
                     .column
+                        h3.subtitle KR
                         +trending_search("dailytrends","KR")
 
     include _footer.pug

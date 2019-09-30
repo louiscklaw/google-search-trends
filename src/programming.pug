@@ -16,13 +16,7 @@ html(lang='en')
         section.section
             .container
                 .columns
-                    .column
-                        h3.title language population
-
-        section.section
-            .container
-                .columns
-                    +different_region_helloworld(
+                    +renderExploreWidgetColumns(
                         "TIMESERIES",
                         ['python','javascript','php','golang','RUST'],
                         ['today 3-m'],
@@ -31,11 +25,35 @@ html(lang='en')
 
         section.section
             .container
-                h3 geomap helloworld
+                h3 programming language distribution over the world
                 .columns
-                    +different_region_helloworld(
+                    +renderExploreWidgetColumns(
                         "GEO_MAP",
-                        ['python','javascript','php','golang','RUST'],
+                        ['python'],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['javascript'],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['php'],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['golang'],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['RUST'],
                         ['today 3-m'],
                         ['']
                         )

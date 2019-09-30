@@ -1,4 +1,5 @@
 include _mixins.pug
+include _vars.pug
 
 doctype html
 html(lang='en')
@@ -8,6 +9,7 @@ html(lang='en')
         script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
         script(src="./js/app.min.js")
         link(rel="stylesheet", href="css/style.css")
+
     body
         section.section
             .container
@@ -17,52 +19,61 @@ html(lang='en')
             .container
                 .columns
                     .column.
-                        <h1 class="title">Jobs trend</h1>
-                        <h2 class="subtitle">jobs trend on recruit page</h2>
+                        <h3 class="title">Job poster web trend</h3>
+
         section.section
             .container
+                h3.subtitle comparison to the posters web(3 month)
                 .columns
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page global</h3>
-                        +renderExploreWidget("TIMESERIES", {
-                            'jobsdb':['','today 3-m'],
-                            'linkedin':['','today 3-m'],
-                            'recruit':['','today 3-m']
-                            })
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page HK</h3>
-                        +renderExploreWidget("TIMESERIES", {
-                            'jobsdb':['HK','today 3-m'],
-                            'linkedin':['HK','today 3-m'],
-                            'recruit':['HK','today 3-m']
-                            })
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page US</h3>
-                        +renderExploreWidget("TIMESERIES", {
-                            'jobsdb':['US','today 3-m'],
-                            'linkedin':['US','today 3-m'],
-                            'recruit':['US','today 3-m']
-                            })
-        sectino.section
-            .container
-                .columns
-                    .column.
-                        <h2 class="subtitle">keywords</h2>
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        ['jobsdb','linkedin','recruit', CAREER_TIMES, INDEED_WEBSITE],
+                        ['today 3-m'],
+                        ['','HK','TW','US']
+                        )
+
         section.section
             .container
+                h3.subtitle comparison to the posters web(12 month)
                 .columns
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page global</h3>
-                        +renderExploreWidget("RELATED_TOPICS", {
-                            'jobsdb IT openings':['HK','today 12-m']
-                            })
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page global</h3>
-                        +renderExploreWidget("RELATED_TOPICS", {
-                            'recruit IT openings':['','today 12-m']
-                            })
-                    .column
-                        <h3 class="subtitle">jobs trend on recruit page global</h3>
-                        +renderExploreWidget("RELATED_TOPICS", {
-                            'linkedin IT openings':['','today 12-m']
-                            })
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        ['jobsdb','linkedin','recruit', CAREER_TIMES, INDEED_WEBSITE],
+                        ['today 12-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK job posters web(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['jobsdb'],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['linkedin'],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['recruit'],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [CAREER_TIMES],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [INDEED_WEBSITE],
+                        ['today 12-m'],
+                        ['HK']
+                        )

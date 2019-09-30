@@ -1,10 +1,10 @@
 document.addEventListener( "DOMContentLoaded", function () {
     console.log( "helloworld" );
-    let test = document.getElementById( "trends-widget-1" );
-    let column_list = document.querySelectorAll( '.column' );
+
+    let column_list = document.querySelectorAll( '.expandable' );
 
     column_list.forEach( ( column ) => {
-        console.log( 'findme' );
+
         column.addEventListener( 'mouseenter', function ( event ) {
             column.classList.add( 'is-half' );
         } )
