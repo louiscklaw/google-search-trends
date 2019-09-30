@@ -3,7 +3,7 @@ include _mixins.pug
 doctype html
 html(lang='en')
     head
-        title google trends dashboard
+        title trends of the world by region
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css")
         script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
         script(src="./js/app.min.js")
@@ -16,25 +16,24 @@ html(lang='en')
         section.section
             .container
                 .columns
-                    +different_region_helloworld(
-                        "TIMESERIES",
-                        ['lihkg','hkgolden'],
-                        ['today 3-m'],
-                        ['','HK','TW','US']
-                        )
-
-        section.section
-            .container
-                .columns
-                    .column
-                        +google_search_related_quries("lihkg")
-                    .column
-                        +google_search_related_quries("hkgolden")
                     .column
                         +trending_search("dailytrends","HK")
                     .column
                         +trending_search("dailytrends","TW")
                     .column
                         +trending_search("dailytrends","US")
+                    .column
+                        +trending_search("dailytrends","GB")
+            .container
+                .columns
+                    .column
+                        +trending_search("dailytrends","FR")
+                    .column
+                        +trending_search("dailytrends","DE")
+                    .column
+                        +trending_search("dailytrends","JP")
+                    .column
+                        +trending_search("dailytrends","KR")
 
     include _footer.pug
+    script(src="js/app.js")

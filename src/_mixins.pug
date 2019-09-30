@@ -103,6 +103,13 @@ mixin compare_by_region()
             "guestPath": "https://trends.google.com:443/trends/embed/"
         } );
 
+mixin different_region_helloworld(type, compare_items,  duration, region_list)
+    each region in region_list
+        .column
+            +renderExploreWidget_test(type, compare_items, duration[0], region )
+
+
+
 mixin lihkg_vs_hkgolden_interest_over_time()
     script.
         trends.embed.renderExploreWidget( "TIMESERIES", {
@@ -134,3 +141,51 @@ mixin google_search_topics(duration, geo)
 
 mixin google_search_queries(duration, geo)
     +google_explore_widget("RELATED_QUERIES", duration, geo)
+
+mixin renderExploreWidget_test(type, compare_items, period, region)
+    - var temp_str = [];
+    //- pre !{type}
+    //- pre !{compare_items}
+    //- pre !{period}
+    //- pre !{region}
+    each item in compare_items
+        - var template = '{"keyword": "'+item+'", "geo": "'+region+'", "time": "'+period+'"}';
+        - temp_str.push(template)
+
+    script.
+        trends.embed.renderExploreWidget( "!{type}", {
+            "comparisonItem": [
+                !{temp_str.join(',')}
+            ],
+            "category": 0,
+            "property": ""
+        }, {
+            "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+mixin trending_search(type, geo)
+    script.
+        trends.embed.renderWidget( "!{type}", "", {
+            "geo": "!{geo}",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );
+
+
+mixin renderExploreWidget(type, list, property="")
+    - var compare_items = [];
+    each val, index in list
+        - var template = '{"keyword": "'+index+'", "geo": "'+val[0]+'", "time": "'+val[1]+'"}';
+        - compare_items.push(template)
+
+    script.
+        trends.embed.renderExploreWidget( "!{type}", {
+            "comparisonItem": [
+                !{compare_items.join(',')}
+            ],
+            "category": 0,
+            "property": "!{property}"
+        }, {
+            "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+            "guestPath": "https://trends.google.com:443/trends/embed/"
+        } );

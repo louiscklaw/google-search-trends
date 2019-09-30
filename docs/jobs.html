@@ -1,61 +1,56 @@
-<!DOCTYPE html><html lang="en"><head><title>google trends dashboard</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"><script src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js"></script><script src="./js/app.min.js"></script><link rel="stylesheet" href="css/style.css"></head><body><section class="section"><div class="container"><nav class="level"><p class="level-item has-text-centered"><a class="link is-info" href="index.html">Home</a></p><p class="level-item has-text-centered"><a class="link is-info" href="google.html">google trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="github.html">github trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="facebook.html">facebook trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="youtube.html">youtube trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="programming.html">programming trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="lihkg_vs_hkgolden.html">lihkg_vs_hkgolden trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="jobs.html">jobs trend</a></p></nav></div></section><section class="section"><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderExploreWidget( "TIMESERIES", {
-    "comparisonItem": [ {
-        "keyword": "lihkg",
-        "geo": "",
-        "time": "today 3-m"
-    }, {
-        "keyword": "hkgolden",
-        "geo": "",
-        "time": "today 3-m"
-    } ],
+<!DOCTYPE html><html lang="en"><head><title>google trends dashboard</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"><script src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js"></script><script src="./js/app.min.js"></script><link rel="stylesheet" href="css/style.css"></head><body><section class="section"><div class="container"><nav class="level"><p class="level-item has-text-centered"><a class="link is-info" href="index.html">Home</a></p><p class="level-item has-text-centered"><a class="link is-info" href="google.html">google trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="github.html">github trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="facebook.html">facebook trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="youtube.html">youtube trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="programming.html">programming trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="lihkg_vs_hkgolden.html">lihkg_vs_hkgolden trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="jobs.html">jobs trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="world.html">world trend</a></p></nav></div></section><sectino class="section"><div class="container"><div class="columns"><div class="column"><h1 class="title">Jobs trend</h1>
+<h2 class="subtitle">jobs trend on recruit page</h2></div></div></div></sectino><section class="section"><div class="container"><div class="columns"><div class="column"><h3 class="subtitle">jobs trend on recruit page global</h3><script>trends.embed.renderExploreWidget( "TIMESERIES", {
+    "comparisonItem": [
+        {"keyword": "jobsdb", "geo": "", "time": "today 3-m"},{"keyword": "linkedin", "geo": "", "time": "today 3-m"},{"keyword": "recruit", "geo": "", "time": "today 3-m"}
+    ],
     "category": 0,
     "property": ""
 }, {
     "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
     "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div></div></div></section><section class="section"><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
-    "comparisonItem": [ {
-        "keyword": "jobsdb",
-        "time": "today 1-m"
-    } ],
+} );</script></div><div class="column"><h3 class="subtitle">jobs trend on recruit page HK</h3><script>trends.embed.renderExploreWidget( "TIMESERIES", {
+    "comparisonItem": [
+        {"keyword": "jobsdb", "geo": "HK", "time": "today 3-m"},{"keyword": "linkedin", "geo": "HK", "time": "today 3-m"},{"keyword": "recruit", "geo": "HK", "time": "today 3-m"}
+    ],
     "category": 0,
     "property": ""
 }, {
-    "exploreQuery": "q=jobsdb&date=today 1-m",
+    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
     "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
-    "comparisonItem": [ {
-        "keyword": "jobsdb",
-        "time": "today 1-m"
-    } ],
-    "category": 0,
-    "property": "youtube"
-}, {
-    "exploreQuery": "q=jobsdb&date=today 1-m",
-    "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div></div></div></section><section class="section"><div class="container"><div class="columns"><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
-    "comparisonItem": [ {
-        "keyword": "hkgolden",
-        "time": "today 1-m"
-    } ],
+} );</script></div><div class="column"><h3 class="subtitle">jobs trend on recruit page US</h3><script>trends.embed.renderExploreWidget( "TIMESERIES", {
+    "comparisonItem": [
+        {"keyword": "jobsdb", "geo": "US", "time": "today 3-m"},{"keyword": "linkedin", "geo": "US", "time": "today 3-m"},{"keyword": "recruit", "geo": "US", "time": "today 3-m"}
+    ],
     "category": 0,
     "property": ""
 }, {
-    "exploreQuery": "q=hkgolden&date=today 1-m",
+    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
     "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div><div class="column"><script>trends.embed.renderExploreWidget( "RELATED_QUERIES", {
-    "comparisonItem": [ {
-        "keyword": "hkgolden",
-        "time": "today 1-m"
-    } ],
+} );</script></div></div></div></section><sectino class="section"><div class="container"><div class="columns"><div class="column"><h2 class="subtitle">keywords</h2></div></div></div></sectino><section class="section"><div class="container"><div class="columns"><div class="column"><h3 class="subtitle">jobs trend on recruit page global</h3><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [
+        {"keyword": "jobsdb IT openings", "geo": "HK", "time": "today 12-m"}
+    ],
     "category": 0,
-    "property": "youtube"
+    "property": ""
 }, {
-    "exploreQuery": "q=hkgolden&date=today 1-m",
+    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
     "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div></div></div></section></body></html>
+} );</script></div><div class="column"><h3 class="subtitle">jobs trend on recruit page global</h3><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [
+        {"keyword": "recruit IT openings", "geo": "", "time": "today 12-m"}
+    ],
+    "category": 0,
+    "property": ""
+}, {
+    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );</script></div><div class="column"><h3 class="subtitle">jobs trend on recruit page global</h3><script>trends.embed.renderExploreWidget( "RELATED_TOPICS", {
+    "comparisonItem": [
+        {"keyword": "linkedin IT openings", "geo": "", "time": "today 12-m"}
+    ],
+    "category": 0,
+    "property": ""
+}, {
+    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+    "guestPath": "https://trends.google.com:443/trends/embed/"
+} );</script></div></div></div></section></body></html>

@@ -13,25 +13,56 @@ html(lang='en')
             .container
                 include _nav.pug
 
+        sectino.section
+            .container
+                .columns
+                    .column.
+                        <h1 class="title">Jobs trend</h1>
+                        <h2 class="subtitle">jobs trend on recruit page</h2>
         section.section
             .container
                 .columns
                     .column
-                        +lihkg_vs_hkgolden_interest_over_time
-
-
+                        <h3 class="subtitle">jobs trend on recruit page global</h3>
+                        +renderExploreWidget("TIMESERIES", {
+                            'jobsdb':['','today 3-m'],
+                            'linkedin':['','today 3-m'],
+                            'recruit':['','today 3-m']
+                            })
+                    .column
+                        <h3 class="subtitle">jobs trend on recruit page HK</h3>
+                        +renderExploreWidget("TIMESERIES", {
+                            'jobsdb':['HK','today 3-m'],
+                            'linkedin':['HK','today 3-m'],
+                            'recruit':['HK','today 3-m']
+                            })
+                    .column
+                        <h3 class="subtitle">jobs trend on recruit page US</h3>
+                        +renderExploreWidget("TIMESERIES", {
+                            'jobsdb':['US','today 3-m'],
+                            'linkedin':['US','today 3-m'],
+                            'recruit':['US','today 3-m']
+                            })
+        sectino.section
+            .container
+                .columns
+                    .column.
+                        <h2 class="subtitle">keywords</h2>
         section.section
             .container
                 .columns
                     .column
-                        +google_search_related_quries("jobsdb")
+                        <h3 class="subtitle">jobs trend on recruit page global</h3>
+                        +renderExploreWidget("RELATED_TOPICS", {
+                            'jobsdb IT openings':['HK','today 12-m']
+                            })
                     .column
-                        +google_search_related_quries("jobsdb","youtube")
-
-        section.section
-            .container
-                .columns
+                        <h3 class="subtitle">jobs trend on recruit page global</h3>
+                        +renderExploreWidget("RELATED_TOPICS", {
+                            'recruit IT openings':['','today 12-m']
+                            })
                     .column
-                        +google_search_related_quries("hkgolden")
-                    .column
-                        +google_search_related_quries("hkgolden","youtube")
+                        <h3 class="subtitle">jobs trend on recruit page global</h3>
+                        +renderExploreWidget("RELATED_TOPICS", {
+                            'linkedin IT openings':['','today 12-m']
+                            })
