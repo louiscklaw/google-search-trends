@@ -1,0 +1,81 @@
+include _vars.pug
+include _mixins.pug
+
+doctype html
+html(lang='en')
+    head
+        title programming dashboard
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css")
+        script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
+        script(src="./js/app.min.js")
+        link(rel="stylesheet", href="css/style.css")
+    body
+        section.section
+            .container
+                include _nav.pug
+
+        section.section
+            .container
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        ['IOT'],
+                        ['today 5-y'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['IOT'],
+                        ['today 5-y'],
+                        ['']
+                        )
+
+        section.section
+            .container
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [SIERRAWIRELESS,TELIT,SIMCOM,'Quectel'],
+                        ['today 12-m'],
+                        ['CN','KR','SH','JP']
+                        )
+
+                .columns
+
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [SIERRAWIRELESS,TELIT,SIMCOM,'Quectel'],
+                        ['today 12-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle programming language distribution over the world
+                .columns
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [SIERRAWIRELESS],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [TELIT],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [SIMCOM],
+                        ['today 3-m'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        ['Quectel'],
+                        ['today 3-m'],
+                        ['']
+                        )
+
+    include _footer.pug

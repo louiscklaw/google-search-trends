@@ -1,0 +1,78 @@
+include _vars.pug
+include _mixins.pug
+
+doctype html
+html(lang='en')
+    head
+        title programming dashboard
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css")
+        script(src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js")
+        script(src="./js/app.min.js")
+        link(rel="stylesheet", href="css/style.css")
+    body
+        section.section
+            .container
+                include _nav.pug
+
+        section.section
+            .container
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [AI,IOT,BIOMETRICS, BLOCKCHAIN,ROBOTICS],
+                        ['today 5-y'],
+                        ['']
+                        )
+        section.section
+            .container
+                .columns
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [AI],
+                        ['today 5-y'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [IOT],
+                        ['today 5-y'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [BIOMETRICS],
+                        ['today 5-y'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [BLOCKCHAIN],
+                        ['today 5-y'],
+                        ['']
+                        )
+                    +renderExploreWidgetColumns(
+                        "GEO_MAP",
+                        [ROBOTICS],
+                        ['today 5-y'],
+                        ['']
+                        )
+        section.section
+            .container
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [AI,IOT,BIOMETRICS, BLOCKCHAIN,ROBOTICS],
+                        ['today 12-m'],
+                        ['CN','KR','SH','JP']
+                        )
+
+                .columns
+
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [AI,IOT,BIOMETRICS, BLOCKCHAIN,ROBOTICS],
+                        ['today 12-m'],
+                        ['','HK','TW','US']
+                        )
+
+    include _footer.pug
