@@ -1,0 +1,180 @@
+include _mixins.pug
+include _vars.pug
+
+doctype html
+html(lang='en')
+    head
+        title IM trend
+        include head.pug
+    body
+        section.section
+            .container
+                include _nav.pug
+
+        sectino.section
+            .container
+                .columns
+                    .column.
+                        <h3 class="title">IM trend</h3>
+
+        section.section
+            .container
+                h3.subtitle comparison IM(3 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [APP_WHATSAPP,TOPIC_FACEBOOK_MSG,APP_WECHAT, APP_SLACK, APP_LINE],
+                        ['today 3-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle comparison IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [APP_WHATSAPP,TOPIC_FACEBOOK_MSG,APP_WECHAT, APP_SLACK, APP_LINE],
+                        ['today 12-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WHATSAPP],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [TOPIC_FACEBOOK_MSG],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WECHAT],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_SLACK],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_LINE],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WHATSAPP],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [TOPIC_FACEBOOK_MSG],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WECHAT],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_SLACK],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_LINE],
+                        ['today 12-m'],
+                        ['US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WHATSAPP],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [TOPIC_FACEBOOK_MSG],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WECHAT],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_SLACK],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_LINE],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WHATSAPP],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [TOPIC_FACEBOOK_MSG],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_WECHAT],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_SLACK],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [APP_LINE],
+                        ['today 12-m'],
+                        ['JP']
+                        )

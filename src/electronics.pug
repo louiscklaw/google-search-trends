@@ -1,0 +1,133 @@
+include _mixins.pug
+include _vars.pug
+
+doctype html
+html(lang='en')
+    head
+        title IM trend
+        include head.pug
+    body
+        section.section
+            .container
+                include _nav.pug
+
+        sectino.section
+            .container
+                .columns
+                    .column.
+                        <h3 class="title">IM trend</h3>
+
+        section.section
+            .container
+                h3.subtitle comparison IM(3 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [COMPANY_ADAFRUIT,COMPANY_SPARKFUN,'tindie'],
+                        ['today 3-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle comparison IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "TIMESERIES",
+                        [COMPANY_ADAFRUIT,COMPANY_SPARKFUN,'tindie'],
+                        ['today 12-m'],
+                        ['','HK','TW','US']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_ADAFRUIT],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_SPARKFUN],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['tindie'],
+                        ['today 12-m'],
+                        ['HK']
+                        )
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_ADAFRUIT],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_SPARKFUN],
+                        ['today 12-m'],
+                        ['US']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['tindie'],
+                        ['today 12-m'],
+                        ['US']
+                        )
+
+
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_ADAFRUIT],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_SPARKFUN],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['tindie'],
+                        ['today 12-m'],
+                        ['TW']
+                        )
+
+        section.section
+            .container
+                h3.subtitle search topics breakdown to HK IM(12 month)
+                .columns
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_ADAFRUIT],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        [COMPANY_SPARKFUN],
+                        ['today 12-m'],
+                        ['JP']
+                        )
+                    +renderExploreWidgetColumns(
+                        "RELATED_TOPICS",
+                        ['tindie'],
+                        ['today 12-m'],
+                        ['JP']
+                        )
