@@ -1,11 +1,96 @@
-<!DOCTYPE html><html lang="en"><head><title>google trends dashboard</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"><script src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js"></script><script src="./js/app.min.js"></script><link rel="stylesheet" href="css/style.css"></head><body><section class="section"><div class="container"><nav class="level"><p class="level-item has-text-centered"><a class="link is-info" href="world.html">Home</a></p><p class="level-item has-text-centered"><a class="link is-info" href="programming.html">programming trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="lihkg_vs_hkgolden.html">lihkg_vs_hkgolden trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="jobs.html">jobs trend</a></p><p class="level-item has-text-centered"><a class="link is-info" href="IOT.html">IOT</a></p><p class="level-item has-text-centered"><a class="link is-info" href="tech_terms.html">tech_terms</a></p><p class="level-item has-text-centered"><a class="link is-info" href="helloworld.html">helloworld</a></p></nav></div></section><section class="section"><div class="container"><h3>geomap helloworld</h3><div class="columns"><div class="column"><div class="graph_title">World</div><script>trends.embed.renderExploreWidget( "GEO_MAP", {
-    "comparisonItem": [
-        {"keyword": "python", "geo": "", "time": "today 3-m"},{"keyword": "javascript", "geo": "", "time": "today 3-m"},{"keyword": "php", "geo": "", "time": "today 3-m"},{"keyword": "golang", "geo": "", "time": "today 3-m"},{"keyword": "RUST", "geo": "", "time": "today 3-m"}
-    ],
-    "category": 0,
-    "property": ""
-}, {
-    "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
-    "guestPath": "https://trends.google.com:443/trends/embed/"
-} );
-</script></div></div></div></section></body><footer class="footer-containers"><div class="footer-left"><div class="footer-container"></div></div><div class="footer-mid"><div class="footer-container"><a href="http://louiscklaw.github.io">back to louiscklaw.github.io</a></div></div><div class="footer-right"><div class="footer-container"></div></div></footer></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>google trends dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script src="https://ssl.gstatic.com/trends_nrtr/1937_RC01/embed_loader.js"></script>
+    <script src="./js/app.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <nav class="level">
+                <p class="level-item has-text-centered"><a class="link is-info" href="world.html">Home</a></p>
+                <p class="level-item has-text-centered"><a class="link is-info" href="programming.html">programming
+                        trend</a></p>
+                <p class="level-item has-text-centered"><a class="link is-info"
+                        href="lihkg_vs_hkgolden.html">lihkg_vs_hkgolden trend</a></p>
+                <p class="level-item has-text-centered"><a class="link is-info" href="jobs.html">jobs trend</a></p>
+                <p class="level-item has-text-centered"><a class="link is-info" href="IOT.html">IOT</a></p>
+                <p class="level-item has-text-centered"><a class="link is-info" href="tech_terms.html">tech_terms</a>
+                </p>
+                <p class="level-item has-text-centered"><a class="link is-info" href="helloworld.html">helloworld</a>
+                </p>
+            </nav>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h3>geomap helloworld</h3>
+            <div class="columns">
+                <div class="column">
+                    <div class="graph_title">World</div>
+                    <script>
+                        trends.embed.renderExploreWidget( "GEO_MAP", {
+                            "comparisonItem": [ {
+                                "keyword": "python",
+                                "geo": "",
+                                "time": "today 3-m"
+                            }, {
+                                "keyword": "javascript",
+                                "geo": "",
+                                "time": "today 3-m"
+                            }, {
+                                "keyword": "php",
+                                "geo": "",
+                                "time": "today 3-m"
+                            }, {
+                                "keyword": "golang",
+                                "geo": "",
+                                "time": "today 3-m"
+                            }, {
+                                "keyword": "RUST",
+                                "geo": "",
+                                "time": "today 3-m"
+                            } ],
+                            "category": 0,
+                            "property": ""
+                        }, {
+                            "exploreQuery": "date=today%203-m&q=lihkg,hkgolden",
+                            "guestPath": "https://trends.google.com:443/trends/embed/"
+                        } );
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        fetch('https://us-central1-louislabs-com.cloudfunctions.net/hello_nodejs',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({a: 'apple'})
+        })
+        .then( res => {
+            console.log(res);
+        })
+    </script>
+</body>
+<footer class="footer-containers">
+    <div class="footer-left">
+        <div class="footer-container"></div>
+    </div>
+    <div class="footer-mid">
+        <div class="footer-container"><a href="http://louiscklaw.github.io">back to louiscklaw.github.io</a></div>
+    </div>
+    <div class="footer-right">
+        <div class="footer-container"></div>
+    </div>
+</footer>
+
+</html>
